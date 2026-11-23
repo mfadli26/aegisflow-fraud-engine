@@ -18,6 +18,28 @@ spring:
       port: ${SPRING_DATA_REDIS_PORT:6379}
   kafka:
     bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    streams:
+      application-id: aegisflow-fraud-engine-v1
+      state-dir: /tmp/aegisflow-kafka-streams
+      properties:
+        auto.offset.reset: earliest
+        commit.interval.ms: 500
+        default.deserialization.exception.handler: org.apache.kafka.streams.errors.LogAndContinueExceptionHandler
+
+aegis:
+  fraud:
+    block-threshold: 80
+    review-threshold: 60
+    sliding-window-seconds: 60
+    rules:
+      blacklist-account:
+        enabled: true
+      velocity-spike:
+        enabled: true
+      amount-anomaly:
+        enabled: true
+      geo-impossible-travel:
+        enabled: true
 
 management:
   endpoints:
