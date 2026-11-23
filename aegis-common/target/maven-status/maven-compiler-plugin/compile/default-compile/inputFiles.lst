@@ -1,0 +1,8 @@
+/workspaces/aegisflow-fraud-engine/aegis-common/src/main/java/com/aegisflow/common/constant/constant/KafkaTopics.java
+/workspaces/aegisflow-fraud-engine/aegis-common/src/main/java/com/aegisflow/common/dto/ApiResponse.java
+/workspaces/aegisflow-fraud-engine/aegis-common/src/main/java/com/aegisflow/common/enums/DecisionStatus.java
+/workspaces/aegisflow-fraud-engine/aegis-common/src/main/java/com/aegisflow/common/enums/RiskLevel.java
+/workspaces/aegisflow-fraud-engine/aegis-common/src/main/java/com/aegisflow/common/enums/TransactionType.java
+/workspaces/aegisflow-fraud-engine/aegis-common/src/main/java/com/aegisflow/common/event/RiskScoredEvent.java
+/workspaces/aegisflow-fraud-engine/aegis-common/src/main/java/com/aegisflow/common/event/RuleViolationDetail.java
+/workspaces/aegisflow-fraud-engine/aegis-common/src/main/java/com/aegisflow/common/event/TransactionCreatedEvent.java
