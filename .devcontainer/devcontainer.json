@@ -1,0 +1,32 @@
+{
+  "name": "AegisFlow Dev Environment (Java 21 + Docker)",
+  "image": "mcr.microsoft.com/devcontainers/java:21",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "dockerDashComposeVersion": "v2"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-boot-dev-pack",
+        "ms-azuretools.vscode-docker",
+        "humao.rest-client"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "forwardPorts": [8081, 8082, 8083, 8090, 9200],
+  "portsAttributes": {
+    "8081": { "label": "Transaction Service" },
+    "8082": { "label": "Fraud Engine Service" },
+    "8083": { "label": "Investigation Service" },
+    "8090": { "label": "Kafka UI" },
+    "9200": { "label": "Elasticsearch" }
+  },
+  "remoteUser": "vscode"
+}
