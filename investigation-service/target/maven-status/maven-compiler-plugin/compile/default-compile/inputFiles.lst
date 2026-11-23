@@ -1,1 +1,14 @@
 /workspaces/aegisflow-fraud-engine/investigation-service/src/main/java/com/aegisflow/investigation/InvestigationServiceApplication.java
+/workspaces/aegisflow-fraud-engine/investigation-service/src/main/java/com/aegisflow/investigation/config/KafkaConsumerConfig.java
+/workspaces/aegisflow-fraud-engine/investigation-service/src/main/java/com/aegisflow/investigation/consumer/ScoredEventConsumer.java
+/workspaces/aegisflow-fraud-engine/investigation-service/src/main/java/com/aegisflow/investigation/controller/InvestigationController.java
+/workspaces/aegisflow-fraud-engine/investigation-service/src/main/java/com/aegisflow/investigation/document/FraudAuditDocument.java
+/workspaces/aegisflow-fraud-engine/investigation-service/src/main/java/com/aegisflow/investigation/dto/AccountRiskRankDto.java
+/workspaces/aegisflow-fraud-engine/investigation-service/src/main/java/com/aegisflow/investigation/dto/AnomalyZScoreDto.java
+/workspaces/aegisflow-fraud-engine/investigation-service/src/main/java/com/aegisflow/investigation/dto/AuditSearchResponseDto.java
+/workspaces/aegisflow-fraud-engine/investigation-service/src/main/java/com/aegisflow/investigation/dto/BucketCountDto.java
+/workspaces/aegisflow-fraud-engine/investigation-service/src/main/java/com/aegisflow/investigation/dto/CircularTransferDto.java
+/workspaces/aegisflow-fraud-engine/investigation-service/src/main/java/com/aegisflow/investigation/dto/FraudAnalyticsSummaryDto.java
+/workspaces/aegisflow-fraud-engine/investigation-service/src/main/java/com/aegisflow/investigation/repository/FraudAnalyticsNativeRepository.java
+/workspaces/aegisflow-fraud-engine/investigation-service/src/main/java/com/aegisflow/investigation/repository/FraudAuditRepository.java
+/workspaces/aegisflow-fraud-engine/investigation-service/src/main/java/com/aegisflow/investigation/service/AuditSearchService.java
