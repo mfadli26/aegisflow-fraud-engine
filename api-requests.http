@@ -1,0 +1,66 @@
+### 1. Check Microservices Health
+GET http://localhost:8081/actuator/health
+###
+GET http://localhost:8082/actuator/health
+###
+GET http://localhost:8083/actuator/health
+
+### 2. Get Account Profile (Redis Cache-Aside)
+GET http://localhost:8081/api/v1/accounts/ACC-1001
+
+### 3. Submit Normal Transaction (Idempotent)
+POST http://localhost:8081/api/v1/transactions
+Content-Type: application/json
+Idempotency-Key: manual-test-001
+
+{
+  "sourceAccountId": "ACC-1001",
+  "amount": 450000.00,
+  "currency": "IDR",
+  "txType": "PAYMENT",
+  "merchantName": "Fore Coffee Sudirman",
+  "merchantCategory": "FNB",
+  "countryCode": "IDN",
+  "city": "Jakarta",
+  "latitude": -6.2146,
+  "longitude": 106.8211,
+  "deviceId": "DEV-A1",
+  "ipAddress": "103.10.1.11"
+}
+
+### 4. Inspect Registered Spring IoC FraudRuleEvaluator Beans
+GET http://localhost:8082/api/v1/rules/registered-beans
+
+### 5. Inspect Dynamic Rule Grid (Redisson RMap)
+GET http://localhost:8082/api/v1/rules
+
+### 6. Hot-Reload Rule Threshold in Redisson Data Grid
+PUT http://localhost:8082/api/v1/rules/VELOCITY_SPIKE
+Content-Type: application/json
+
+{
+  "weight": 40,
+  "thresholdValue": 3.0,
+  "enabled": true
+}
+
+### 7. Kafka Streams Interactive Query (1m RocksDB WindowStore)
+GET http://localhost:8082/api/v1/stream/velocity/ACC-1004
+
+### 8. PostgreSQL Recursive CTE — Circular Money-Laundering Rings
+GET http://localhost:8083/api/v1/investigations/sql/circular-transfers?lookbackHours=24&maxHops=4
+
+### 9. PostgreSQL Window Functions — Z-Score Statistical Anomalies
+GET http://localhost:8083/api/v1/investigations/sql/amount-anomalies?lookbackDays=30&minZScore=1.0
+
+### 10. PostgreSQL Risk Leaderboard (FILTER + PERCENTILE_CONT 0.95 + DENSE_RANK)
+GET http://localhost:8083/api/v1/investigations/sql/risk-leaderboard
+
+### 11. Live PostgreSQL EXPLAIN ANALYZE Plan
+GET http://localhost:8083/api/v1/investigations/sql/explain-plan
+
+### 12. Elasticsearch Fuzzy & Multi-Criteria Search
+GET http://localhost:8083/api/v1/investigations/elastic/search?keyword=Luxry&riskLevel=CRITICAL
+
+### 13. Elasticsearch Real-Time Fraud Aggregations
+GET http://localhost:8083/api/v1/investigations/elastic/analytics
