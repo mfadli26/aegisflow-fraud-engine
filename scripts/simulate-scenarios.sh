@@ -21,7 +21,7 @@ for i in 1 2 3 4; do
     -H "Content-Type: application/json" \
     -H "Idempotency-Key: sim-burst-${RUN_ID}-${i}" \
     -d "{\"sourceAccountId\":\"ACC-1004\",\"amount\":300000.00,\"currency\":\"IDR\",\"txType\":\"PAYMENT\",\"merchantName\":\"Flash Digital Store #${i}\",\"merchantCategory\":\"DIGITAL\",\"countryCode\":\"IDN\",\"city\":\"Medan\",\"latitude\":3.5952,\"longitude\":98.6722,\"deviceId\":\"DEV-D1\",\"ipAddress\":\"103.40.4.41\"}" \
-    | jq -c '{burst:#, txId:.data.txId}' --argjson '#' "${i}"
+    | jq -c --argjson burst "${i}" '{burst: $burst, txId: .data.txId}'
 done
 
 echo -e "\n=== 4. Scenario C: Impossible Travel + Extreme Amount Anomaly (ACC-1003 to Tokyo) ==="

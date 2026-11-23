@@ -23,7 +23,8 @@ FROM eclipse-temurin:21-jre-alpine
 ARG SERVICE_NAME
 WORKDIR /app
 
-RUN addgroup -S aegis && adduser -S aegis -G aegis \
+RUN apk add --no-cache libstdc++ gcompat \
+    && addgroup -S aegis && adduser -S aegis -G aegis \
     && mkdir -p /tmp/aegisflow-kafka-streams \
     && chown -R aegis:aegis /app /tmp/aegisflow-kafka-streams
 
